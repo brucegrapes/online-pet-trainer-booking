@@ -1,0 +1,76 @@
+<head>
+  <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body style="height:100vh;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:lightgrey;">
+  <a class="navbar-brand" href="#">Magic Pet</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="nav navbar-nav navbar-right">
+      <a class="nav-item nav-link" href="#">Home</a>
+      <a class="nav-item nav-link" href="#">Logout</a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="col-4 jumbotron" style="border-radius: 10px;">
+            <form autocomplete="off" #myform = "ngForm" (ngSubmit)="addTrainer(myform)">
+              <div class="form-group">
+                <input type="hidden" name="trainerId" [(ngModel)]="user.trainerId" class="form-control">
+              </div>
+                <div class="form-group">
+                    <label>Name : </label>
+                    <input type="text" name="name" [(ngModel)]="user.name" class="form-control">
+                  </div>
+                <div class="form-group">
+                    <label>Email : </label>
+                    <input type="email" name="email" [(ngModel)]="user.email"class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Password : </label>
+                    <input type="password" name="password" [(ngModel)]="user.password"class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Shop Name : </label>
+                    <input type="text" name="shopName" [(ngModel)]="user.shopName" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>Experience : </label>
+                    <input type="text" name="experience" [(ngModel)]="user.experience"class="form-control">
+                  </div>
+                  <button type="submit" class="btn btn-success">{{isEdit ? 'Update' : 'Create'}}</button>
+            </form>
+        </div>
+        <div class="col-8">
+            <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Shop Name</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let t of trainers">
+                  <tr>
+                    <td style="cursor:pointer;"><i (click)= "edit(t)" class="fa fa-pencil-square-o"></i></td>
+                    <td>{{t.name}}</td>
+                    <td>{{t.email}}</td>
+                    <td>{{t.shopName}}</td>
+                    <td>{{t.experience}}</td>
+                  <td style="cursor:pointer;"><i (click)= "delete(t)" class="fa fa-trash"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+</body>

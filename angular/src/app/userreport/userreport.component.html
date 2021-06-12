@@ -1,0 +1,67 @@
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">Magic Pet</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- Team -->
+<div class="div1" style="background-color:lightblue;">
+<section id="team" class="pb-5" >
+    <div class="container">
+        <div class="row">
+             <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let u of user"> 
+                <div class="image-flip" >
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="http://simpleicon.com/wp-content/uploads/user1.png" alt="card image"></p>
+                                    <h2>{{u.clientDetail.username}}</h2>
+                                    <p>{{u.date}}</p>
+                                    <p>{{u.time}}</p> 
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm">Report</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card" style="width: 20rem;">
+                                <div class="card-body text-center mt-4">
+                                    <h2 class="card-title">{{u.clientDetail.username}}</h2>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <!-- <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                <i class="bi bi-calendar"></i>
+                                            </a> -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16" style="float:left">
+                                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                            </svg>
+                                            <span>{{u.date}} || </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                            </svg>
+                                            <span>{{u.time}}</span>
+                                        </li>
+                                    </ul>
+                                    <input type="text" placeholder="Enter the amount"><br>
+                                    <input type="text" placeholder="Enter the days"><br>
+                                    <textarea name="petreport"  cols="22" rows="3">Enter the pet report here!!</textarea><br>
+                                    <input class="btn btn-primary" type="submit" value="Submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
